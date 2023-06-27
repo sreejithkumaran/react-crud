@@ -1,5 +1,5 @@
 import React, { useContext, useState,useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useMatch, useParams } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalState";
 
 const EditUser = (props) => {
@@ -9,12 +9,15 @@ const EditUser = (props) => {
   });
 
   const { users, editUser } = useContext(GlobalContext);
+  
   const navigate = useNavigate();
-  const currentUserId = props.match.params.id;
+  //const currentUserId = props.match.params.id;
+  const currentUserId = useParams().id
 
   useEffect(() => {
     const userId = currentUserId
-    const selectedUser = users.find(users => userId.id === userId)
+    console.log(users , currentUserId)
+    const selectedUser = users.find(users => users.id === userId)
     setSelectedUser(selectedUser)
   },[currentUserId, users])
 
@@ -29,8 +32,9 @@ const EditUser = (props) => {
 
   return (
     <div>
+      <h2>Edit Form</h2>
       <form onSubmit={onSubmit}>
-        <labl>Name : </labl>
+        <label>Name : </label>
         <input
           text="text"
           placeholder="Enter Name"

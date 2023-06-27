@@ -16,7 +16,7 @@ const UserList = () => {
             <ListGroupItem className="d-flex" key={user.id}>
               <strong>{user.name}</strong>
               <div className="ml-auto">
-                <Link className="btn btn-warning mr-1" to={`/edit/${user.id}`}>
+                <Link className="btn btn-warning mr-1" to={`/editUser/${user.id}`}>
                   Edit
                 </Link>
                 <Button onClick={() => removeUser(user.id)} color="danger">
