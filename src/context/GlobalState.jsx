@@ -12,7 +12,7 @@ const initialState = {
 // Create Context
 export const GlobalContext = createContext(initialState)
 
-// Provider Component
+// Provider Componentp
 export const GlobalProvider = ({children}) => {
 const [state, dispatch] = useReducer(AppReducer, initialState)
 
@@ -26,6 +26,7 @@ const removeUser =(id) => {
 }
 
 const addUser =(user) => {
+    console.log(user)
     dispatch({
         type:'ADD_USER',
         payload: user

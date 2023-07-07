@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Heading = () => {
     return(
         <div>
-            <Link to="/addUser"> Add User</Link>
+            {/* <Link to="/addUser"> Add User</Link> */}
         </div>
     )
 }
